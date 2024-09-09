@@ -396,6 +396,7 @@ public with sharing class ClassesObjectsMethods {
      * @return A string containing the details of the person.
      */
     public static List<String> personDetails() {
+        
         List<String> results = new List<String>();
         
         // Create a new instance of Person class
