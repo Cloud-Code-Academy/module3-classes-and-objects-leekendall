@@ -275,10 +275,10 @@ public with sharing class ClassesObjectsMethods {
         public Integer pages = 0;
 
         // Book constructor to initialize the title and author
-        public Book() {
+        public Book(String myTitle, String myAuthor) {
             // Initialize the title and author
-            this.title = '';
-            this.author = '';
+            this.title = myTitle;
+            this.author = myAuthor;
         }
     
         // Method that returns the details of the book
@@ -298,9 +298,7 @@ public with sharing class ClassesObjectsMethods {
      */
     public static String createAndGetBookDetails() {
         // Create a Book object with title "A Brief History of Time" and author "Stephen Hawking"
-        Book book = new Book();
-        book.title = 'A Brief History of Time';
-        book.author = 'Stephen Hawking';
+        Book book = new Book('A Brief History of Time', 'Stephen Hawking');
         
         // Call the getBookDetails method on the book object to get the details of the book
         String bookDetails = book.getBookDetails();
@@ -329,10 +327,10 @@ public with sharing class ClassesObjectsMethods {
         // Update the pages for myBook1 to 352
         myBook1.pages = 352;
 
+        books.add(myBook1);
+
         // Create a new Book object with title "A Brief History of Time" and author "Stephen Hawking"
-        Book book2 = new Book();
-        book2.title = 'Title: A Brief History of Time';
-        book2.author = 'Stephen Hawking';
+        Book book2 = new Book('A Brief History of Time', 'Stephen Hawking');
 
         // Update the pages for A Brief History of Time to 256
         book2.pages = 256;
@@ -357,9 +355,9 @@ public with sharing class ClassesObjectsMethods {
         private Integer age;
         
         // Constructor to initialize the name and age
-        public Person() {
-            this.name = '';
-            this.age = 0;
+        public Person(String name, Integer age) {
+            this.name = name;
+            this.age = age;
         }
 
         // Method introduceYourself that returns the details of the person        
@@ -401,7 +399,7 @@ public with sharing class ClassesObjectsMethods {
         List<String> results = new List<String>();
         
         // Create a new instance of Person class
-        Person person = new Person();
+        Person person = new Person(null, null);
         
         // Name the person 'John Doe' and set the age to 28
         person.setName('John Doe');
@@ -428,7 +426,7 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Person createPerson(String name, Integer age) {
         // Create a new instance of the Person class using the provided name and age
-        Person person = new Person();
+        Person person = new Person(name, age);
         person.setName(name);
         person.setAge(age);
 
@@ -453,7 +451,7 @@ public with sharing class ClassesObjectsMethods {
             // Create a new Person object for each name
             // Add the new Person object to the list of Person objects
         for (String name : names) {
-            Person person = new Person();
+            Person person = new Person(null, null);
             person.setName(name);
             person.setAge(age);
             persons.add(person);
@@ -481,7 +479,7 @@ public with sharing class ClassesObjectsMethods {
         } else if (person2.age > person1.age) {
             return person2;
         } else {
-            return null;
+            return person1;
         }
     }
 }
