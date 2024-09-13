@@ -184,8 +184,8 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Double calculateDifferenceOfSquares(Double a, Double b) {
         // Square the input numbers using the Math.pow() function
-        a = math.pow(a, 2);
-        b = math.pow(b, 2);
+        a = Math.pow(a, 2);
+        b = Math.pow(b, 2);
 
         // Calculate the absolute difference using Math.abs() function
         Double c = Math.abs(a -  b);
