@@ -104,12 +104,9 @@ public with sharing class ClassesObjectsMethods {
         List<String> words = sentence.split(' ');
 
         // Create a set to store the unique words
-        Set<String> wordSet = new Set<String>();
-
         // Add each word to the set
-        for (String word : words) {
-            wordSet.add(word);
-        }
+        Set<String> wordSet = new Set<String>();
+        wordSet.addAll(words);
 
         // Join the unique words back into a sentence
         String newSentence = String.join(wordSet, ' ');
@@ -131,13 +128,13 @@ public with sharing class ClassesObjectsMethods {
         // Initialize the result Integer
         Integer vowelCount = 0;
         List<String> letters = str.split('');
+        List<String> vowels = new List<String>{'a', 'e', 'i', 'o', 'u'};
 
         for (String letter : letters) {
-            if (letter.containsAny('aeiou')) {
+            if (vowels.contains(letter)) {
                 vowelCount += 1;
             }
         }
-
         return vowelCount; // Replace null with the variable you used to store the result
     }
 
@@ -158,12 +155,18 @@ public with sharing class ClassesObjectsMethods {
         // Loop through the list of scientists' names
         for (String name : scientistNames) {
             // If the name doesn't contain the letter 'G', skip this iteration
-            if (name.toLowerCase().containsNone('g')) {
-                continue;
-            } else {
-                // Add the name to the result string, followed by a comma
+            if (name.containsIgnoreCase('G')) {
                 filteredNames += name + ',';
+            } else {
+                continue;
             }
+
+            // if (name.toLowerCase().containsNone('g')) {
+            //     continue;
+            // } else {
+            //     // Add the name to the result string, followed by a comma
+            //     filteredNames += name + ',';
+            // }
         }
         // Remove the last comma from the result string
         filteredNames = filteredNames.replaceAll(',$', '');
