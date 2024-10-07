@@ -132,7 +132,7 @@ public with sharing class ClassesObjectsMethods {
 
         for (String letter : letters) {
             if (vowels.contains(letter)) {
-                vowelCount += 1;
+                vowelCount ++;
             }
         }
         return vowelCount; // Replace null with the variable you used to store the result
@@ -169,7 +169,7 @@ public with sharing class ClassesObjectsMethods {
             // }
         }
         // Remove the last comma from the result string
-        filteredNames = filteredNames.replaceAll(',$', '');
+        filteredNames = filteredNames.removeEnd(',');
 
         return filteredNames; // Replace null with the variable you used to store the result
     }
@@ -201,9 +201,9 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Integer generateRandomNumber() {
         // Use Math class to generate number between 50 and 100
-        Double a = Math.random() * (100 - 50) + 50;
+        Integer randomNum = (Integer) (Math.random() * (100 - 50 + 1) + 50);
         // Return the random integer
-        return (Integer)a; // Replace null with the variable you used to store the result
+        return randomNum; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -214,9 +214,9 @@ public with sharing class ClassesObjectsMethods {
      */
     public static String getCurrentDate() {
         // Get the todays date
-        Date d = Date.today();
+        Date dateToday = Date.today();
         // Format the current date
-        String localDate = d.format();
+        String localDate = dateToday.format();
         // Return the result
         return localDate; // Replace null with the variable you used to store the result
     }
