@@ -160,13 +160,6 @@ public with sharing class ClassesObjectsMethods {
             } else {
                 continue;
             }
-
-            // if (name.toLowerCase().containsNone('g')) {
-            //     continue;
-            // } else {
-            //     // Add the name to the result string, followed by a comma
-            //     filteredNames += name + ',';
-            // }
         }
         // Remove the last comma from the result string
         filteredNames = filteredNames.removeEnd(',');
@@ -403,11 +396,8 @@ public with sharing class ClassesObjectsMethods {
         List<String> results = new List<String>();
         
         // Create a new instance of Person class
-        Person person = new Person(null, null);
-        
         // Name the person 'John Doe' and set the age to 28
-        person.setName('John Doe');
-        person.setAge(28);
+        Person person = new Person('John Doe', 28);
 
         // Add the details of the person using the introduceYourself method
         results.add(person.introduceYourself());
