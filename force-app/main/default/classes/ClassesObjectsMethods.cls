@@ -240,7 +240,7 @@ public with sharing class ClassesObjectsMethods {
         String dayNumber = weekdays.get(day);
 
         // Return the result as a string
-        return dayNumber; // dayNumber.toString(); // Replace null with the variable you used to store the result
+        return dayNumber;  // Replace null with the variable you used to store the result
     }
 
 
