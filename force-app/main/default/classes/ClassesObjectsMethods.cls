@@ -257,7 +257,7 @@ public with sharing class ClassesObjectsMethods {
         if (d1 == null || d2 == null) {
             return null;
         } else {
-            return (d2.year() - d1.year()); 
+            return Math.abs((d2.year() - d1.year())); 
         }
     }
 
