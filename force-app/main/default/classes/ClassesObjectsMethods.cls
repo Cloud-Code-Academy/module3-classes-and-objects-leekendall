@@ -105,11 +105,11 @@ public with sharing class ClassesObjectsMethods {
 
         // Create a set to store the unique words
         // Add each word to the set
-        Set<String> wordSet = new Set<String>();
-        wordSet.addAll(words);
+        Set<String> uniqueWords = new Set<String>();
+        uniqueWords.addAll(words);
 
         // Join the unique words back into a sentence
-        String newSentence = String.join(wordSet, ' ');
+        String newSentence = String.join(uniqueWords, ' ');
 
         // Return the sentence with unique words
         return newSentence; // Replace null with the variable you used to store the result
